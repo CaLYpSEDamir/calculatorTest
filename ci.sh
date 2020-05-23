@@ -1,5 +1,15 @@
 
+set -o errexit
+set -o nounset
+set -x
 
-flake8 .
 
-pytest .
+run_ci () {
+  flake8 .
+
+  pytest .
+
+  echo 'SUCCESS'
+}
+
+run_ci
